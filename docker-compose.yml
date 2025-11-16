@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./ai_id_photo_backend_api
+      dockerfile: Dockerfile
+      args:
+        - NODE_VERSION=20.18.0
+    env_file:
+      - ./ai_id_photo_backend_api/.env
+    environment:
+      - PORT=4000
+    ports:
+      - "4000:4000"
+
+  frontend:
+    build:
+      context: ./ai_id_photo_web_app
+      dockerfile: Dockerfile
+      args:
+        - NODE_VERSION=20.18.0
+        - NEXT_PUBLIC_REACT_APP_BASE_API_URL=http://backend:4000
+    environment:
+      - NEXT_PUBLIC_REACT_APP_BASE_API_URL=http://backend:4000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
