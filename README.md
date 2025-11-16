@@ -19,7 +19,7 @@ This project replicates the architecture used in real-world ID-photo services an
 
 ---
 
-## 🔥 Demo
+## Demo
 | Generator Options | Processing | Before vs After |
 |:----------------------:|:---------------:|:---------------:|
 | ![Generator Options](demo/options.png) | ![Processing](demo/Processing.png) | ![Before vs After](demo/befor_after.png) | 
@@ -40,7 +40,7 @@ This project replicates the architecture used in real-world ID-photo services an
 
 ---
 
-## 🎯 Problem
+## Problem
 
 Given a user portrait photo, the system must:
 
@@ -55,7 +55,7 @@ Given a user portrait photo, the system must:
 
 ---
 
-## 🧩 Key Features
+## Key Features
 
 * **✔ Full Production-Style Pipeline**
     * Upload ingestion & file validation
@@ -79,13 +79,13 @@ Given a user portrait photo, the system must:
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
-### 🖼️ Architecture Diagram
+### Architecture Diagram
 ![Architecture](docs/architecture.png)
 
 
-### 🧱 Component Breakdown
+### Component Breakdown
 
 #### 🟦 Frontend (Next.js + TS)
 
@@ -175,7 +175,7 @@ docker compose up --build
 
 -----
 
-## 🧪 API Reference
+## API Reference
 
 | Method | Endpoint | Description |
 | :--- | :--- | :--- |
@@ -186,7 +186,7 @@ docker compose up --build
 
 -----
 
-## 🎬 Demo Assets
+## Demo Assets
 
 Store your screenshots & video here:
 
@@ -209,7 +209,7 @@ demos/
 
 -----
 
-## 🔮 Roadmap
+## Roadmap
 
   * Webhooks for async callbacks
   * Batch generation / zip export
