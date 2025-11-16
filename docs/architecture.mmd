@@ -1,0 +1,24 @@
+flowchart LR
+  subgraph Client
+    U[User Browser]
+  end
+
+  subgraph Frontend [Next.js Web App]
+    FE[/Upload UI & Forms/]
+  end
+
+  subgraph Backend [API Service]
+    API((REST API))
+    PIPE[Processing Pipeline\n- Validation\n- Segmentation/Matting\n- Face Detect & Crop\n- Resize & Enhance\n- Background Synthesis]
+  end
+
+  subgraph Storage
+    INP[(Originals)]
+    OUT[(Outputs: PNG/JPG)]
+  end
+
+  U --> FE --> API
+  API --> INP
+  API --> PIPE --> OUT
+  API --> OUT
+  API -->|URLs / Download| FE --> U
