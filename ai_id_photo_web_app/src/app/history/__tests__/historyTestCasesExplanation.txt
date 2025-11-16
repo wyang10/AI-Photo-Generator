@@ -1,0 +1,51 @@
+Test Cases Explanation
+File: UserProfileHistoryPage.test.js
+This file contains unit tests for the UserProfileHistoryPage component. The purpose of these tests is to verify the correct rendering and functionality of the component, including user details, photo history, avatar handling, and image downloads.
+
+Test Case: Renders the Component Correctly
+- Purpose: Verify that the UserProfileHistoryPage component renders user details and history photos correctly when data is available.
+- Steps:
+    - Mock the API responses for getLoggedInUserDetails and fetchHistoryPhotosById.
+    - Check that the user's first name, last name, and email are displayed on the page.
+    - Verify that all history photos are rendered.
+- Expected Outcome:
+    - User details (Welcome, John, john.doe@example.com) are displayed.
+    - History photos with correct alt texts (Photo 1, Photo 2) are rendered.
+
+Test Case: Displays 'No Photos' When There Are No Photos
+- Purpose: Verify that the component handles the absence of history photos gracefully.
+- Steps:
+    - Mock the API responses to return user details but an empty array for photos.
+    - Render the component.
+    - Check for the presence of the "No photos" message.
+- Expected Outcome:
+    - "No photos" message is displayed when the photo list is empty.
+
+Test Case: Handles Image Download Correctly
+- Purpose: Verify the functionality for downloading an individual photo.
+- Steps:
+    - Mock API responses for user details and a single history photo
+    - Render the component with one history photo.
+    - Simulate clicking the download icon for the photo.
+    - Verify that the correct URL is passed to the fetch function.
+- Expected Outcome:
+    - The download function (fetch) is called with the correct image URL.
+    - No errors occur during the process.
+
+Test case: Rendering the avatar image from user details
+- Purpose: Ensure the user's avatar image is displayed correctly when it exists in the user details.
+- Steps:
+    - Mock the API response for getLoggedInUserDetails to include an avatar URL.
+    - Render the component.
+    - Verify that the avatar image is rendered with the correct src attribute.
+- Expected Outcome:
+    - The avatar image is displayed with the correct URL.
+
+Test case: Handling avatar fallback when avatar is missing
+- Purpose: Verify the fallback mechanism for the avatar when no avatar URL is provided.
+- Steps:
+    - Mock the API response for getLoggedInUserDetails without an avatar URL.
+    - Render the component.
+    - Verify that the default avatar image is displayed.
+- Expected Outcome:
+    - The default avatar (/images/exampleImage/avatar.png) is displayed when no avatar is provided.

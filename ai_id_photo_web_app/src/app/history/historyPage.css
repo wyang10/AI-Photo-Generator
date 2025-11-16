@@ -1,0 +1,184 @@
+.profileContainer {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    background-color: #f1f4f7;
+}
+
+.mainContent {
+    margin-top: 30px;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 80rem;
+    padding-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: 1.5rem;
+}
+
+.topSection {
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.welcomeMessage {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+}
+
+.date {
+    font-size: 14px;
+    color: #888;
+}
+
+.middleSection {
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    justify-content: center;
+}
+
+.colorBar {
+    height: 50px;
+    background: linear-gradient(to right, #b2d0f7, #eae6ff, #fef6e4);
+}
+
+.contentBody {
+    padding: 20px;
+}  
+
+.profileInfo {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+
+.profileImage {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+}
+
+.userInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.profileName {
+    font-size: 18px;
+    font-weight: bold;
+    color: #363b44;
+}
+  
+.profileEmail {
+    text-decoration: underline;
+    font-size: 14px;
+    color: #6b7280;
+    transition: color 0.3s;
+}
+
+.profileEmail:hover {
+    color: #1a73e8;
+}
+
+.downloadButton {
+    margin-left: auto;
+    padding: 10px 20px;
+    background-color: #3b82f6;
+    color: #fff;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.downloadButton:hover {
+    background-color: #2563eb;
+}
+
+.bottomSection {
+    margin: 30px;
+}
+
+.historyTitle {
+    font-size: 16px;
+    font-weight: 150;
+    color: #1f2937;
+    margin-bottom: 10px;
+}
+
+.photoGrid {
+    display: grid;
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.photoItem {
+    position: relative; /* important to setup the overlay space */
+    border-radius: 8px;
+    /* set the examples to be fixed size to the window */
+    width: 120px;
+    height: 120px; 
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar {
+    position: relative;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.photoImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(221, 221, 221, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.photoItem:hover .overlay {
+    opacity: 1;
+}
+
+.avatar:hover .overlay {
+    opacity: 0;
+}
+
+.downloadIcon {
+    color: #000;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.downloadIcon:hover {
+    opacity: 1;
+}

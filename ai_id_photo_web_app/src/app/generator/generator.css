@@ -1,0 +1,19 @@
+.generatorContainer {
+    display: flex;
+    min-height: 120vh;
+    background-color: #f1f4f7;
+}
+
+.mainContent {
+    margin-top: 30px;
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 80rem;
+    padding-left: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    row-gap: 1.5rem;
+}

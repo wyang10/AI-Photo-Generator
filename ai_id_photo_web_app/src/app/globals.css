@@ -1,0 +1,35 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=YourFontName:wght@400;600&display=swap');
+
+/* Tailwind Base, Components, and Utilities */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root variables for color themes */
+:root {
+  --background: #ffffff; /* Default light theme background */
+  --foreground: #171717; /* Default light theme text color */
+}
+
+/* Dark mode theme colors */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; /* Dark theme background */
+    --foreground: #333; /* Dark theme text color */
+  }
+}
+
+/* Apply custom colors and fonts globally */
+body {
+  color: var(--foreground); /* Apply foreground color */
+  background-color: var(--background); /* Apply background color */
+  font-family: 'YourFontName', Arial, Helvetica, sans-serif; /* Use custom font with fallbacks */
+}
+
+/* Custom utility class */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance; /* Apply balanced text wrapping */
+  }
+}
