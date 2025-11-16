@@ -242,14 +242,15 @@ demos/
 
 ## 📚 Documentation & Guides
 
-* **[API Reference ](API.md)**
+* **[API Reference ](docs/API.md)**
     > View all REST API endpoints, request parameters, and response examples.
-* **[Docker GPU Deployment](Docker_GPU_Deployment.md)**
+* **[Docker GPU Deployment](docs/Docker_GPU_Deployment.md)**
     > Guide on how to build and run the Docker container with NVIDIA GPU support.
-* **[GPU Acceleration Guide](GPU_Acceleration.md)**
+* **[GPU Acceleration Guide](docs/GPU_Acceleration.md)**
     > Detailed steps for configuring your local environment with CUDA/cuDNN and `onnxruntime-gpu`.
-* **[GPU Performance Benchmark](GPU_Benchmark.md)**
+* **[GPU Performance Benchmark](docs/GPU_Benchmark.md)**
     > Performance comparison data and charts for models running on CPU versus various GPUs.
+    
 -----
 
 ## ⚡ GPU Deployment Guide
