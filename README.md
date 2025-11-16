@@ -2,7 +2,7 @@
  * @Author: Audrey Yang 97855340+wyang10@users.noreply.github.com
  * @Date: 2025-11-15 23:58:46
  * @LastEditors: Audrey Yang 97855340+wyang10@users.noreply.github.com
- * @LastEditTime: 2025-11-16 00:11:10
+ * @LastEditTime: 2025-11-16 10:06:01
  * @FilePath: /AI-Photo-Generator/README-1.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -238,6 +238,70 @@ demos/
   * Access control + signed URLs
   * Preprocessing API (EXIF fix, color balance)
 
+----
+
+## 📚 Documentation & Guides
+
+* **[API Reference ](API.md)**
+    > View all REST API endpoints, request parameters, and response examples.
+* **[Docker GPU Deployment](Docker_GPU_Deployment.md)**
+    > Guide on how to build and run the Docker container with NVIDIA GPU support.
+* **[GPU Acceleration Guide](GPU_Acceleration.md)**
+    > Detailed steps for configuring your local environment with CUDA/cuDNN and `onnxruntime-gpu`.
+* **[GPU Performance Benchmark](GPU_Benchmark.md)**
+    > Performance comparison data and charts for models running on CPU versus various GPUs.
+-----
+
+## ⚡ GPU Deployment Guide
+
+### Enable NVIDIA GPU Acceleration for HivisionIDPhotos
+
+This guide will help you enable NVIDIA GPU acceleration for inference on your local machine or server, significantly boosting performance when using high-performance matting models like **BiRefNet**.
+
+---
+
+### 1. Overview
+
+Currently, the only model officially supporting GPU acceleration is: **birefnet-v1-lite**.
+
+If you wish to use the GPU, please ensure your local environment meets the following prerequisites:
+
+* NVIDIA GPU (VRAM of **≥16GB** is recommended for BiRefNet).
+* The corresponding versions of the following installed:
+    * **CUDA Toolkit**
+    * **cuDNN**
+* Installation of the matching version of **`onnxruntime-gpu`**.
+* (Optional) Installation of the matching **PyTorch CUDA** version.
+
+GPU acceleration primarily benefits the following tasks:
+
+* ID photo enhancement (matting + rotation + cropping flow).
+* Generating high-definition matting results.
+* Generating high-resolution six-inch layout photos (acceleration is most noticeable when using BiRefNet).
+
+---
+
+### 2. Environment Preparation
+
+#### 2.1 Install CUDA & cuDNN
+
+Please select the official installer packages based on the major version of CUDA you are using:
+
+* **CUDA:** [https://developer.nvidia.com/cuda-downloads](https://developer.nvidia.com/cuda-downloads)
+* **cuDNN:** [https://developer.nvidia.com/cudnn](https://developer.nvidia.com/cudnn)
+
+> **Note:** CUDA supports a degree of **backward compatibility**. For example, a system with CUDA 12.6 installed can still typically use PyTorch's `cu121` wheel.
+
+---
+
+### 3. Install GPU Execution Provider (`onnxruntime-gpu`)
+
+`HivisionIDPhotos` internally uses `onnxruntime` for ONNX model inference. To enable the GPU, simply install the `onnxruntime-gpu` package corresponding to your CUDA version:
+
+```bash
+pip install onnxruntime-gpu==1.18.0
+```
+
 -----
 
 ## 📜 License & Acknowledgments
@@ -250,6 +314,4 @@ demos/
   * RMBG
   * BiRefNet
   * MTCNN / RetinaFace / Face++
-  * HivisionIDPhotos
-
-https://github.com/Zeyi-Lin/HivisionIDPhotos.git
+  * [HivisionIDPhotos](https://github.com/Zeyi-Lin/HivisionIDPhotos.git)
