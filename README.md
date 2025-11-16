@@ -2,7 +2,7 @@
  * @Author: Audrey Yang 97855340+wyang10@users.noreply.github.com
  * @Date: 2025-11-15 23:58:46
  * @LastEditors: Audrey Yang 97855340+wyang10@users.noreply.github.com
- * @LastEditTime: 2025-11-16 12:10:14
+ * @LastEditTime: 2025-11-16 12:29:46
  * @FilePath: /AI-Photo-Generator/README-1.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -81,38 +81,9 @@ Given a user portrait photo, the system must:
 
 ## 🏗️ Architecture
 
-### 🖼️ Architecture Diagram (Mermaid)
+### 🖼️ Architecture Diagram
+![Architecture](docs/architecture.png)
 
-```mermaid
-flowchart LR
-  subgraph Client
-    U[User Browser]
-  end
-
-  subgraph Frontend [Next.js Web App]
-    FE[/Upload UI, Options, Preview/]
-  end
-
-  subgraph Backend [Node.js API Service]
-    API((REST API))
-    PIPE[Processing Pipeline\n• Validation\n• Segmentation/Matting\n• Face Detection\n• Alignment & Crop\n• Background Synthesis\n• Resize & Export]
-  end
-
-  subgraph ModelLayer [Model Integration Layer]
-    MOD[MODNet/RMBG/BiRefNet]
-    FD[Face Detector]
-  end
-
-  subgraph Storage [Persistent Storage]
-    INP[(Original Uploads)]
-    OUT[(Final Outputs)]
-  end
-
-  U --> FE --> API
-  API --> INP
-  API --> PIPE --> ModelLayer --> PIPE --> OUT
-  API -->|Result URLs| FE --> U
-````
 
 ### 🧱 Component Breakdown
 
