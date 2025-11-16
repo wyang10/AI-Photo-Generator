@@ -2,7 +2,7 @@
  * @Author: Audrey Yang 97855340+wyang10@users.noreply.github.com
  * @Date: 2025-11-15 23:58:46
  * @LastEditors: Audrey Yang 97855340+wyang10@users.noreply.github.com
- * @LastEditTime: 2025-11-16 10:06:01
+ * @LastEditTime: 2025-11-16 12:10:14
  * @FilePath: /AI-Photo-Generator/README-1.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -19,7 +19,15 @@ This project replicates the architecture used in real-world ID-photo services an
 
 ---
 
-## 🔥 What I Built
+## 🔥 Demo
+|:----------------------:|:---------------:|:---------------:|
+| ![Generator Options](demo/options.png) | ![Processing](demo/Processing.png) | ![Before vs After](demo/befor_after.png) | 
+| ![Uploading photos](demo/upload_photo.png) | ![User Profile](demo/user_profile.png) | ![User History photos](demo/user_history.png) | 
+
+
+---
+
+## What I Built
 
 * Designed a **full-stack ID-photo generation service**.
 * Integrated open-source segmentation & face-detection models into a **unified pipeline**.
