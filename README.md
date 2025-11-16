@@ -20,8 +20,10 @@ This project replicates the architecture used in real-world ID-photo services an
 ---
 
 ## 🔥 Demo
+| Generator Options | Processing | Before vs After |
 |:----------------------:|:---------------:|:---------------:|
 | ![Generator Options](demo/options.png) | ![Processing](demo/Processing.png) | ![Before vs After](demo/befor_after.png) | 
+| Uploading photos | User Profile | User History photos |
 | ![Uploading photos](demo/upload_photo.png) | ![User Profile](demo/user_profile.png) | ![User History photos](demo/user_history.png) | 
 
 
